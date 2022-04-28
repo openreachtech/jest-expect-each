@@ -1,0 +1,31 @@
+{
+  "name": "@openreachtech/jest-expect-each",
+  "version": "0.0.0",
+  "description": "expect.each() for Jest extention.",
+  "main": "index.js",
+  "scripts": {
+    "l": "npm run lint",
+    "lint": "eslint .",
+    "test": "export NODE_ENV=development; jest --forceExit --detectOpenHandles"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/openreachtech/jest-expect-each.git"
+  },
+  "keywords": [
+    "Renchan",
+    "Jest"
+  ],
+  "author": "Open Reach Tech inc.",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/openreachtech/jest-expect-each/issues"
+  },
+  "homepage": "https://github.com/openreachtech/jest-expect-each#readme",
+  "devDependencies": {
+    "@openreachtech/eslint-config": "^0.2.0",
+    "@types/jest": "^27.4.1",
+    "eslint": "^8.14.0",
+    "jest": "^28.0.2"
+  }
+}
