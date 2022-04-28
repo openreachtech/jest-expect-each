@@ -4,6 +4,8 @@
   "description": "expect.each() for Jest extention.",
   "main": "index.js",
   "scripts": {
+    "l": "npm run lint",
+    "lint": "eslint .",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -19,5 +21,9 @@
   "bugs": {
     "url": "https://github.com/openreachtech/jest-expect-each/issues"
   },
-  "homepage": "https://github.com/openreachtech/jest-expect-each#readme"
+  "homepage": "https://github.com/openreachtech/jest-expect-each#readme",
+  "devDependencies": {
+    "@openreachtech/eslint-config": "^0.2.0",
+    "eslint": "^8.14.0"
+  }
 }
