@@ -4,6 +4,8 @@
   "description": "expect.each() for Jest extention.",
   "main": "index.js",
   "scripts": {
+    "l": "npm run lint",
+    "lint": "eslint .",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
