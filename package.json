@@ -1,0 +1,23 @@
+{
+  "name": "@openreachtech/jest-expect-each",
+  "version": "0.0.0",
+  "description": "expect.each() for Jest extention.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/openreachtech/jest-expect-each.git"
+  },
+  "keywords": [
+    "Renchan",
+    "Jest"
+  ],
+  "author": "Open Reach Tech inc.",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/openreachtech/jest-expect-each/issues"
+  },
+  "homepage": "https://github.com/openreachtech/jest-expect-each#readme"
+}
