@@ -1,6 +1,8 @@
 // @ts-check
 'use strict'
 
+require('../../../lib/setup').setup()
+
 describe('expect.each', () => {
   test('#toBe()', () => {
     const actualTable = [
