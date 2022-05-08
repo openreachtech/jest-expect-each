@@ -6,14 +6,14 @@ require('../../../lib/setup').setup()
 describe('expect.each', () => {
   describe('#rejects', () => {
     test('#toBe()', async () => {
-      const actualTable = [
+      const actualValues = [
         'first error',
         'second error',
         'third error',
         'fourth error',
       ]
-      const actualErrors = actualTable.map(it => Error(it))
-      const expectedTable = actualTable
+      const actualErrors = actualValues.map(it => Error(it))
+      const expectedTable = actualValues
 
       await expect(Promise.reject(actualErrors[0]))
         .rejects

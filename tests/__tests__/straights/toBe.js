@@ -5,7 +5,7 @@ require('../../../lib/setup').setup()
 
 describe('expect.each', () => {
   test('#toBe()', () => {
-    const actualTable = [
+    const actualValues = [
       undefined,
       null,
       false,
@@ -14,9 +14,9 @@ describe('expect.each', () => {
       0,
       100,
     ]
-    const expectedTable = actualTable
+    const expectedTable = actualValues
 
     // @ts-ignore
-    expect.each(actualTable).toBe(expectedTable)
+    expect.each(actualValues).toBe(expectedTable)
   })
 })

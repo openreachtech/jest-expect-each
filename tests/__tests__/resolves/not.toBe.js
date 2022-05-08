@@ -6,7 +6,7 @@ require('../../../lib/setup').setup()
 describe('expect.each', () => {
   describe('#resolves', () => {
     test('#toBe()', async () => {
-      const actualTable = [
+      const actualValues = [
         undefined,
         null,
         false,
@@ -15,16 +15,16 @@ describe('expect.each', () => {
         0,
         100,
       ]
-      const expectedTable = Array(actualTable.length).fill(-1000)
+      const expectedTable = Array(actualValues.length).fill(-1000)
 
-      await expect(Promise.resolve(actualTable[0]))
+      await expect(Promise.resolve(actualValues[0]))
         .resolves
         .not
         .toBe(expectedTable[0])
 
       // @ts-ignore
       await expect.each(
-        actualTable.map(it => Promise.resolve(it))
+        actualValues.map(it => Promise.resolve(it))
       )
         .resolves
         .not
