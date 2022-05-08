@@ -14,9 +14,9 @@ describe('expect.each', () => {
       0,
       100,
     ]
-    const expectedTable = actualValues
+    const expectedValues = actualValues
 
     // @ts-ignore
-    expect.each(actualValues).toBe(expectedTable)
+    expect.each(actualValues).toBe(expectedValues)
   })
 })

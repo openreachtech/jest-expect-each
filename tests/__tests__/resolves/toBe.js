@@ -15,18 +15,18 @@ describe('expect.each', () => {
         0,
         100,
       ]
-      const expectedTable = actualValues
+      const expectedValues = actualValues
 
       await expect(Promise.resolve(actualValues[0]))
         .resolves
-        .toBe(expectedTable[0])
+        .toBe(expectedValues[0])
 
       // @ts-ignore
       await expect.each(
         actualValues.map(it => Promise.resolve(it))
       )
         .resolves
-        .toBe(expectedTable)
+        .toBe(expectedValues)
     })
   })
 })

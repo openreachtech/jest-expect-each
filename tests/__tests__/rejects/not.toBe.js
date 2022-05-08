@@ -13,18 +13,18 @@ describe('expect.each', () => {
         'fourth error',
       ]
       const actualErrors = actualValues.map(it => Error(it))
-      const expectedTable = Array(actualValues.length).fill('unknown error')
+      const expectedValues = Array(actualValues.length).fill('unknown error')
 
       await expect(Promise.reject(actualErrors[0]))
         .rejects
         .not
-        .toThrowError(expectedTable[0])
+        .toThrowError(expectedValues[0])
 
       // @ts-ignore
       await expect.each(actualErrors.map(it => Promise.reject(it)))
         .rejects
         .not
-        .toThrowError(expectedTable)
+        .toThrowError(expectedValues)
     })
   })
 })

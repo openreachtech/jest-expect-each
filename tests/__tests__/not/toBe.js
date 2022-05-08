@@ -14,9 +14,9 @@ describe('expect.each', () => {
       0,
       100,
     ]
-    const expectedTable = Array(actualValues.length).fill(-1000)
+    const expectedValues = Array(actualValues.length).fill(-1000)
 
     // @ts-ignore
-    expect.each(actualValues).not.toBe(expectedTable)
+    expect.each(actualValues).not.toBe(expectedValues)
   })
 })

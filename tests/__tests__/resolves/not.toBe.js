@@ -15,12 +15,12 @@ describe('expect.each', () => {
         0,
         100,
       ]
-      const expectedTable = Array(actualValues.length).fill(-1000)
+      const expectedValues = Array(actualValues.length).fill(-1000)
 
       await expect(Promise.resolve(actualValues[0]))
         .resolves
         .not
-        .toBe(expectedTable[0])
+        .toBe(expectedValues[0])
 
       // @ts-ignore
       await expect.each(
@@ -28,7 +28,7 @@ describe('expect.each', () => {
       )
         .resolves
         .not
-        .toBe(expectedTable)
+        .toBe(expectedValues)
     })
   })
 })
