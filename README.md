@@ -1,0 +1,44 @@
+# Jest Extension `expect.each()`
+
+## Overview
+
+* The Jest extension `expect.each()` presented by Open Reach Tech inc.
+
+## Usage
+
+1. npm install
+
+    ```
+    npm install @openreachtech/jest-expect-each
+    ```
+
+2. Run the following code before using `expect.each()` in a Jest test file.
+
+    ```
+    require('@openreachtech/jest-expect-each').setup()
+    ```
+
+3. Sample code as follows:
+
+    ```
+    test('sample test', () => {
+      const actualValues = [1, 2, 3, 4].map(it => it * 100)
+      const expectedValues = [100, 200, 300, 400]
+
+      expect.each(actualValues).not.toBe(expectedValues)
+    })
+    ```
+
+4. If you use `// @ts-check` in the test file, please add `// @ts-ignore` before the line of `expect.each()`.
+
+    ```
+    // @ts-check
+
+    test('sample test', () => {
+      const actualValues = [1, 2, 3, 4].map(it => it * 100)
+      const expectedValues = [100, 200, 300, 400]
+
+      // @ts-ignore
+      expect.each(actualValues).not.toBe(expectedValues)
+    })
+    ```
