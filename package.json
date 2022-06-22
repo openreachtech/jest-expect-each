@@ -2,7 +2,13 @@
   "name": "@openreachtech/jest-expect-each",
   "version": "0.0.0",
   "description": "expect.each() for Jest extension.",
-  "main": "index.js",
+  "files": [
+    "lib/",
+    "LICENSE.md",
+    "package.json",
+    "README.md"
+  ],
+  "main": "./lib/setup.js",
   "scripts": {
     "l": "npm run lint",
     "lint": "eslint .",
