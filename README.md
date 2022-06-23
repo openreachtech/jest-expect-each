@@ -29,7 +29,7 @@
     })
     ```
 
-4. If you use `// @ts-check` in the test file, please add `// @ts-ignore` before the line of `expect.each()`.
+4. If you use `// @ts-check` in the test file, please add `// @ts-expect-error` before the line of `expect.each()`.
 
     ```
     // @ts-check
@@ -38,7 +38,7 @@
       const actualValues = [1, 2, 3, 4].map(it => it * 100)
       const expectedValues = [100, 200, 300, 400]
 
-      // @ts-ignore
+      // @ts-expect-error
       expect.each(actualValues).not.toBe(expectedValues)
     })
     ```
