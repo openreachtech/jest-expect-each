@@ -16,7 +16,7 @@ describe('expect.each', () => {
     ]
     const expectedValues = actualValues
 
-    // @ts-ignore
+    // @ts-expect-error
     expect.each(actualValues).toBe(expectedValues)
   })
 })

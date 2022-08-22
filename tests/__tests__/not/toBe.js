@@ -16,7 +16,7 @@ describe('expect.each', () => {
     ]
     const expectedValues = Array(actualValues.length).fill(-1000)
 
-    // @ts-ignore
+    // @ts-expect-error
     expect.each(actualValues).not.toBe(expectedValues)
   })
 })

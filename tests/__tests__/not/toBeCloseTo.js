@@ -22,7 +22,7 @@ describe('expect.each', () => {
     expect(actualValues[0]).not // <---- !!!!
       .toBeCloseTo(expectedValues[0], 16)
 
-    // @ts-ignore
+    // @ts-expect-error
     expect.each(actualValues).not // <---- !!!!
       .toBeCloseTo(
         expectedValues.map(it => [it, 16])
