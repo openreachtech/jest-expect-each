@@ -19,7 +19,7 @@ describe('expect.each', () => {
         .rejects
         .toThrowError(expectedValues[0])
 
-      // @ts-ignore
+      // @ts-expect-error
       await expect.each(actualErrors.map(it => Promise.reject(it)))
         .rejects
         .toThrowError(expectedValues)

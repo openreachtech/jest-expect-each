@@ -22,7 +22,7 @@ describe('expect.each', () => {
         .not
         .toBe(expectedValues[0])
 
-      // @ts-ignore
+      // @ts-expect-error
       await expect.each(
         actualValues.map(it => Promise.resolve(it))
       )
