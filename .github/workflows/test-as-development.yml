@@ -3,12 +3,12 @@ name: Node.js CI
 on:
   push:
     branches:
-      - main
       - dev
+      - env
+      - main
   pull_request:
     branches:
-      - main
-      - dev
+      - '**'
 jobs:
   test:
     runs-on: ubuntu-latest

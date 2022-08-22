@@ -1,11 +1,36 @@
 {
   "words": [
+    "bignumber",
+    "bitgo",
+    "btc",
+    "busd",
+    "cascader",
+    "coinpayments",
     "datetime",
+    "dotfiles",
+    "eguchi",
+    "estree",
+    "eth",
+    "eucen",
     "graphql",
+    "graphiql",
+    "jiro",
+    "jpyc",
     "jsdoc",
     "linebreak",
+    "mailgun",
     "oneline",
     "openreachtech",
-    "renchan"
+    "renchan",
+    "ripple",
+    "smallint",
+    "steweucen",
+    "tinyint",
+    "twilio",
+    "unilevel",
+    "usdt",
+    "viet",
+    "webroot",
+    "xrp"
   ]
 }
