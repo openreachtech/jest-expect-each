@@ -29,11 +29,9 @@
     })
     ```
 
-4. If you use `// @ts-check` in the test file, please add `// @ts-expect-error` before the line of `expect.each()`.
+4. If you use type check by VS Code in the test file, please add `// @ts-expect-error` before the line of `expect.each()`.
 
     ```
-    // @ts-check
-
     test('sample test', () => {
       const actualValues = [1, 2, 3, 4].map(it => it * 100)
       const expectedValues = [100, 200, 300, 400]
