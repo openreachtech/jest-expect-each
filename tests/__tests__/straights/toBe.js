@@ -53,7 +53,7 @@ describe('expect.each', () => {
             () => expect.each(actualValues)
               .toBe(expectedValues)
           )
-            .toThrowError(errorMessage)
+            .toThrow(errorMessage)
         })
       })
 
@@ -82,7 +82,7 @@ describe('expect.each', () => {
           test.each(table)(`actual[${actualValues.length}] < expected[$expectedValues.length]`, ({ expectedValues }) => {
             // @ts-expect-error
             expect(() => expect.each(actualValues).toBe(expectedValues))
-              .toThrowError(errorMessage)
+              .toThrow(errorMessage)
           })
         })
       })
