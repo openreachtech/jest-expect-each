@@ -2,7 +2,7 @@
 
 ## Overview
 
-* The Jest extension `expect.each()` presented by Open Reach Tech inc.
+* The Jest extension `expect.each()` presented by Open Reach Tech Inc.
 
 ## Usage
 
