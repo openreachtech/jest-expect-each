@@ -19,13 +19,13 @@ describe('expect.each', () => {
       await expect(Promise.reject(actualErrors[0]))
         .rejects
         .not
-        .toThrowError(expectedValues[0])
+        .toThrow(expectedValues[0])
 
       // @ts-expect-error
       await expect.each(actualErrors.map(it => Promise.reject(it)))
         .rejects
         .not
-        .toThrowError(expectedValues)
+        .toThrow(expectedValues)
     })
   })
 })

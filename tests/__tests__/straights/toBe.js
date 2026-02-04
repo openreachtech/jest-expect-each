@@ -53,7 +53,7 @@ describe('expect.each', () => {
             () => expect.each(actualValues)
               .toBe(expectedValues)
           )
-            .toThrowError(errorMessage)
+            .toThrow(errorMessage)
         })
       })
 
@@ -85,7 +85,7 @@ describe('expect.each', () => {
               () => expect.each(actualValues)
                 .toBe(expectedValues)
             )
-              .toThrowError(errorMessage)
+              .toThrow(errorMessage)
           })
         })
       })
