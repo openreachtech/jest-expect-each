@@ -3,7 +3,7 @@
 require('../../../lib/setup')
   .setup()
 
-describe('expect.each', () => {
+describe('expect.each()', () => {
   test('#toBeCloseTo()', () => {
     const actualValues = [
       0.1 + 0.2,

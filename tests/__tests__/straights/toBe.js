@@ -3,7 +3,7 @@
 require('../../../lib/setup')
   .setup()
 
-describe('expect.each', () => {
+describe('expect.each()', () => {
   describe('#toBe()', () => {
     describe('same length of array', () => {
       const table = [
