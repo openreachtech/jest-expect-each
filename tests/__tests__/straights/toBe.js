@@ -1,8 +1,9 @@
 'use strict'
 
-require('../../../lib/setup').setup()
+require('../../../lib/setup')
+  .setup()
 
-describe('expect.each', () => {
+describe('expect.each()', () => {
   describe('#toBe()', () => {
     describe('same length of array', () => {
       const table = [
@@ -19,7 +20,8 @@ describe('expect.each', () => {
         const expectedValues = actualValues
 
         // @ts-expect-error
-        expect.each(actualValues).toBe(expectedValues)
+        expect.each(actualValues)
+          .toBe(expectedValues)
       })
     })
 
@@ -46,9 +48,12 @@ describe('expect.each', () => {
         const errorMessage = 'expect.each() received lacked array'
 
         test.each(table)(`actual[$actualValues.length] < expected[${expectedValues.length}]`, ({ actualValues }) => {
-          // @ts-expect-error
-          expect(() => expect.each(actualValues).toBe(expectedValues))
-            .toThrowError(errorMessage)
+          expect(
+            // @ts-expect-error
+            () => expect.each(actualValues)
+              .toBe(expectedValues)
+          )
+            .toThrow(errorMessage)
         })
       })
 
@@ -75,9 +80,12 @@ describe('expect.each', () => {
           const errorMessage = 'expect.each() received excess array'
 
           test.each(table)(`actual[${actualValues.length}] < expected[$expectedValues.length]`, ({ expectedValues }) => {
-            // @ts-expect-error
-            expect(() => expect.each(actualValues).toBe(expectedValues))
-              .toThrowError(errorMessage)
+            expect(
+              // @ts-expect-error
+              () => expect.each(actualValues)
+                .toBe(expectedValues)
+            )
+              .toThrow(errorMessage)
           })
         })
       })
