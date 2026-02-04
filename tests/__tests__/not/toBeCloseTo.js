@@ -1,6 +1,7 @@
 'use strict'
 
-require('../../../lib/setup').setup()
+require('../../../lib/setup')
+  .setup()
 
 describe('expect.each', () => {
   test('#toBeCloseTo()', () => {
@@ -13,16 +14,19 @@ describe('expect.each', () => {
 
     expect(actualValues[0])
       .toBe(0.30000000000000004)
-    expect(actualValues[0]).not // <---- !!!!
+    expect(actualValues[0])
+      .not
       .toBe(expectedValues[0])
 
     expect(actualValues[0])
       .toBeCloseTo(expectedValues[0], 15)
-    expect(actualValues[0]).not // <---- !!!!
+    expect(actualValues[0])
+      .not
       .toBeCloseTo(expectedValues[0], 16)
 
     // @ts-expect-error
-    expect.each(actualValues).not // <---- !!!!
+    expect.each(actualValues)
+      .not
       .toBeCloseTo(
         expectedValues.map(it => [it, 16])
       )

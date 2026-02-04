@@ -1,6 +1,7 @@
 'use strict'
 
-require('../../../lib/setup').setup()
+require('../../../lib/setup')
+  .setup()
 
 describe('expect.each', () => {
   describe('#rejects', () => {
@@ -12,7 +13,8 @@ describe('expect.each', () => {
         'fourth error',
       ]
       const actualErrors = actualValues.map(it => Error(it))
-      const expectedValues = Array(actualValues.length).fill('unknown error')
+      const expectedValues = Array(actualValues.length)
+        .fill('unknown error')
 
       await expect(Promise.reject(actualErrors[0]))
         .rejects
