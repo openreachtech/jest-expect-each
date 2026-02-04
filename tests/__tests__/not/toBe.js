@@ -3,7 +3,7 @@
 require('../../../lib/setup')
   .setup()
 
-describe('expect.each', () => {
+describe('expect.each()', () => {
   test('#toBe()', () => {
     const actualValues = [
       undefined,
