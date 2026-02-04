@@ -1,8 +1,9 @@
 'use strict'
 
-require('../../../lib/setup').setup()
+require('../../../lib/setup')
+  .setup()
 
-describe('expect.each', () => {
+describe('expect.each()', () => {
   describe('#rejects', () => {
     test('#toBe()', async () => {
       const actualValues = [
@@ -12,18 +13,19 @@ describe('expect.each', () => {
         'fourth error',
       ]
       const actualErrors = actualValues.map(it => Error(it))
-      const expectedValues = Array(actualValues.length).fill('unknown error')
+      const expectedValues = Array(actualValues.length)
+        .fill('unknown error')
 
       await expect(Promise.reject(actualErrors[0]))
         .rejects
         .not
-        .toThrowError(expectedValues[0])
+        .toThrow(expectedValues[0])
 
       // @ts-expect-error
       await expect.each(actualErrors.map(it => Promise.reject(it)))
         .rejects
         .not
-        .toThrowError(expectedValues)
+        .toThrow(expectedValues)
     })
   })
 })
