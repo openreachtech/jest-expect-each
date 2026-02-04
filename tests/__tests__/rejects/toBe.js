@@ -1,6 +1,7 @@
 'use strict'
 
-require('../../../lib/setup').setup()
+require('../../../lib/setup')
+  .setup()
 
 describe('expect.each', () => {
   describe('#rejects', () => {

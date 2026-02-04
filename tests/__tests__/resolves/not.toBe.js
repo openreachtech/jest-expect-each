@@ -1,6 +1,7 @@
 'use strict'
 
-require('../../../lib/setup').setup()
+require('../../../lib/setup')
+  .setup()
 
 describe('expect.each', () => {
   describe('#resolves', () => {
@@ -14,7 +15,8 @@ describe('expect.each', () => {
         0,
         100,
       ]
-      const expectedValues = Array(actualValues.length).fill(-1000)
+      const expectedValues = Array(actualValues.length)
+        .fill(-1000)
 
       await expect(Promise.resolve(actualValues[0]))
         .resolves

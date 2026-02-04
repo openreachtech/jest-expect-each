@@ -1,6 +1,7 @@
 'use strict'
 
-require('../../../lib/setup').setup()
+require('../../../lib/setup')
+  .setup()
 
 describe('expect.each', () => {
   test('#toBe()', () => {
@@ -13,9 +14,12 @@ describe('expect.each', () => {
       0,
       100,
     ]
-    const expectedValues = Array(actualValues.length).fill(-1000)
+    const expectedValues = Array(actualValues.length)
+      .fill(-1000)
 
     // @ts-expect-error
-    expect.each(actualValues).not.toBe(expectedValues)
+    expect.each(actualValues)
+      .not
+      .toBe(expectedValues)
   })
 })
