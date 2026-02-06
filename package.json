@@ -8,7 +8,7 @@
     "package.json",
     "README.md"
   ],
-  "main": "./lib/setup.js",
+  "main": "./lib/setup-expect-each.js",
   "scripts": {
     "l": "npm run lint",
     "lint": "eslint .",
