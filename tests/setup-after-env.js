@@ -6,6 +6,6 @@ globalThis.THROWN_MESSAGE_REGEX = THROWN_MESSAGE_REGEX
 
 const {
   setup,
-} = require('../lib/setup')
+} = require('../lib/setup-expect-each')
 
 setup()
