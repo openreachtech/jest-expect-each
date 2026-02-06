@@ -1,7 +1,7 @@
 'use strict'
 
-require('../../../lib/setup')
-  .setup()
+require('../../../lib/setup-expect-each')
+  .setupExpectEach()
 
 describe('expect.each()', () => {
   test('#toBe()', () => {
