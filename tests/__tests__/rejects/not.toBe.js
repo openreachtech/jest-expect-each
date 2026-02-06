@@ -1,7 +1,7 @@
 'use strict'
 
 require('../../../lib/setup-expect-each')
-  .setup()
+  .setupExpectEach()
 
 describe('expect.each()', () => {
   describe('#rejects', () => {
