@@ -4,9 +4,7 @@
   "description": "expect.each() for Jest extension.",
   "files": [
     "lib/",
-    "LICENSE.md",
-    "package.json",
-    "README.md"
+    "types/"
   ],
   "main": "./lib/setup-expect-each.js",
   "scripts": {
