@@ -1,18 +1,25 @@
 {
   "name": "@openreachtech/jest-expect-each",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "expect.each() for Jest extension.",
   "files": [
     "lib/",
-    "LICENSE.md",
-    "package.json",
-    "README.md"
+    "types/"
   ],
-  "main": "./lib/setup.js",
+  "main": "./lib/setup-expect-each.js",
+  "exports": {
+    ".": {
+      "import": "./lib/setup-expect-each.mjs",
+      "require": "./lib/setup-expect-each.js",
+      "node": "./lib/setup-expect-each.js",
+      "default": "./lib/setup-expect-each.js"
+    }
+  },
+  "type": "commonjs",
   "scripts": {
     "l": "npm run lint",
     "lint": "eslint .",
-    "test": "export NODE_ENV=development; jest --forceExit --detectOpenHandles"
+    "test": "export NODE_ENV=development; export NODE_OPTIONS=\"$NODE_OPTIONS --experimental-vm-modules\"; jest --maxWorkers=5"
   },
   "repository": {
     "type": "git",
@@ -22,7 +29,7 @@
     "Renchan",
     "Jest"
   ],
-  "author": "Open Reach Tech inc.",
+  "author": "Open Reach Tech Inc.",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/openreachtech/jest-expect-each/issues"
@@ -30,8 +37,8 @@
   "homepage": "https://github.com/openreachtech/jest-expect-each#readme",
   "devDependencies": {
     "@openreachtech/eslint-config": "0.3.0",
-    "@types/jest": "^27.4.1",
+    "@types/jest": "^30.0.0",
     "eslint": "^8.14.0",
-    "jest": "^28.0.2"
+    "jest": "^30.2.0"
   }
 }
