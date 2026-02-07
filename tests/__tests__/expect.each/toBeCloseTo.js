@@ -1371,7 +1371,6 @@ describe('expect.each()', () => {
       describe.each(cases)('actual values: $actualValues', ({ actualValues, excessCases }) => {
         test.each(excessCases)('expected values: $expectedValues', async ({ expectedValues }) => {
           await expect(() =>
-            // @ts-expect-error
             expect.each(actualValues.map(it => () => Promise.reject(it)))
               .rejects
               .not
@@ -1384,6 +1383,14 @@ describe('expect.each()', () => {
     })
 
     describe('matched', () => {
+      /**
+       * @type {Array<{
+       *   actualValues: Array<number>
+       *   unmatchedCases: Array<{
+       *     expectedValues: Array<[number, number]>
+       *   }>
+       * }>}
+       */
       const cases = [
         {
           actualValues: [
@@ -1432,7 +1439,6 @@ describe('expect.each()', () => {
 
       describe.each(cases)('actual values: $actualValues', ({ actualValues, unmatchedCases }) => {
         test.each(unmatchedCases)('expected values: $expectedValues', async ({ expectedValues }) => {
-          // @ts-expect-error
           await expect.each(actualValues.map(it => () => Promise.reject(it)))
             .rejects
             .not
@@ -1442,6 +1448,12 @@ describe('expect.each()', () => {
     })
 
     describe('unmatched to throw', () => {
+      /**
+       * @type {Array<{
+       *   actualValues: Array<number>
+       *   expectedValues: Array<[number, number]>
+       * }>}
+       */
       const cases = [
         {
           actualValues: [
@@ -1469,7 +1481,6 @@ describe('expect.each()', () => {
 
       test.each(cases)('actual values: $actualValues', async ({ actualValues, expectedValues }) => {
         await expect(() =>
-          // @ts-expect-error
           expect.each(actualValues.map(it => () => Promise.reject(it)))
             .rejects
             .not
