@@ -7,6 +7,15 @@
     "types/"
   ],
   "main": "./lib/setup-expect-each.js",
+  "exports": {
+    ".": {
+      "import": "./lib/setup-expect-each.mjs",
+      "require": "./lib/setup-expect-each.js",
+      "node": "./lib/setup-expect-each.js",
+      "default": "./lib/setup-expect-each.js"
+    }
+  },
+  "type": "commonjs",
   "scripts": {
     "l": "npm run lint",
     "lint": "eslint .",
