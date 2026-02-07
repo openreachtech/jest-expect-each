@@ -1526,7 +1526,7 @@ describe('expect.each()', () => {
        * @type {Array<{
        *   actualValues: Array<*>
        *   excessCases: Array<{
-       *     expectedValues: Array<*>
+       *     expectedValues: Array<number | [number, number?]>
        *   }>
        * }>}
        */
@@ -1537,14 +1537,6 @@ describe('expect.each()', () => {
             { expectedValues: [1, 2, 3, 4] },
             { expectedValues: [1, 2, 3, 4, 5] },
             { expectedValues: [1, 2, 3, 4, 5, 6] },
-          ],
-        },
-        {
-          actualValues: ['alpha', 'beta', 'gamma', 'delta'],
-          excessCases: [
-            { expectedValues: ['alpha', 'beta', 'gamma', 'delta', 'epsilon'] },
-            { expectedValues: ['alpha', 'beta', 'gamma', 'delta', 'epsilon', 'zeta'] },
-            { expectedValues: ['alpha', 'beta', 'gamma', 'delta', 'epsilon', 'zeta', 'eta'] },
           ],
         },
         {
