@@ -87,7 +87,6 @@ test('all promises should reject with error', async () => {
     Promise.reject(new Error('failed'))
   ]
 
-  // @ts-expect-error
   await expect.each(promises)
     .rejects
     .toThrow('failed')
@@ -108,13 +107,7 @@ test('no value should be 999', () => {
 
 # TypeScript Support
 
-When using TypeScript or type checking in VS Code, add `// @ts-expect-error` before `expect.each()` calls to suppress type errors:
-
-```typescript
-// @ts-expect-error
-expect.each(actualValues)
-  .toBe(expectedValue)
-```
+When using TypeScript or type checking in VS Code, import `types/jest-expect.each.d.ts` in your package.
 
 # Error Handling
 
