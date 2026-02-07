@@ -1,42 +1,152 @@
-# Jest Extension `expect.each()`
+# jest-expect-each
 
-## Overview
+A Jest extension that adds `expect.each()` for testing multiple values efficiently.
 
-* The Jest extension `expect.each()` presented by Open Reach Tech Inc.
+# Overview
 
-## Usage
+`jest-expect-each` is a Jest extension developed by Open Reach Tech Inc. that allows you to run the same assertion against multiple values in a concise and readable way.
 
-1. npm install
+# Installation
 
-    ```
-    npm install @openreachtech/jest-expect-each
-    ```
+```bash
+npm install @openreachtech/jest-expect-each
+```
 
-2. Run the following code before using `expect.each()` in a Jest test file.
+# Setup
 
-    ```
-    require('@openreachtech/jest-expect-each').setup()
-    ```
+Add the following line to your Jest setup file (e.g., `jest.setup.js`):
 
-3. Sample code as follows:
+```javascript
+const setupExpectEach = require('@openreachtech/jest-expect-each')
 
-    ```
-    test('sample test', () => {
-      const actualValues = [1, 2, 3, 4].map(it => it * 100)
-      const expectedValues = [100, 200, 300, 400]
+setupExpectEach()
+```
 
-      expect.each(actualValues).not.toBe(expectedValues)
-    })
-    ```
+Or import it at the top of individual test files:
 
-4. If you use type check by VS Code in the test file, please add `// @ts-expect-error` before the line of `expect.each()`.
+```javascript
+const setupExpectEach = require('@openreachtech/jest-expect-each')
 
-    ```
-    test('sample test', () => {
-      const actualValues = [1, 2, 3, 4].map(it => it * 100)
-      const expectedValues = [100, 200, 300, 400]
+setupExpectEach()
+```
 
-      // @ts-expect-error
-      expect.each(actualValues).not.toBe(expectedValues)
-    })
-    ```
+# Usage
+
+## Basic Usage: Single Expected Value
+
+Test multiple actual values against one common expected value:
+
+```javascript
+test('all values should be 100', () => {
+  const actualValues = [100, 100, 100, 100]
+  const expectedValue = 100
+
+  expect.each(actualValues)
+    .toBe(expectedValue)
+})
+```
+
+## Advanced Usage: Multiple Expected Values
+
+Test each actual value against its corresponding expected value:
+
+```javascript
+test('values should match their multiplied results', () => {
+  const actualValues = [1, 2, 3, 4].map(it => it * 100)
+  const expectedValues = [100, 200, 300, 400]
+
+  expect.each(actualValues)
+    .toBe.each(expectedValues)
+})
+```
+
+## Working with Promises
+
+### Using `resolves`
+
+```javascript
+test('all promises should resolve to expected values', async () => {
+  const promises = [
+    Promise.resolve(100),
+    Promise.resolve(100),
+    Promise.resolve(100)
+  ]
+
+  await expect.each(promises)
+    .resolves
+    .toBe(100)
+})
+```
+
+### Using `rejects`
+
+```javascript
+test('all promises should reject with error', async () => {
+  const promises = [
+    Promise.reject(new Error('failed')),
+    Promise.reject(new Error('failed'))
+  ]
+
+  // @ts-expect-error
+  await expect.each(promises)
+    .rejects
+    .toThrow('failed')
+})
+```
+
+## Using `not` Matcher
+
+```javascript
+test('no value should be 999', () => {
+  const actualValues = [100, 200, 300]
+
+  expect.each(actualValues)
+    .not
+    .toBe(999)
+})
+```
+
+# TypeScript Support
+
+When using TypeScript or type checking in VS Code, add `// @ts-expect-error` before `expect.each()` calls to suppress type errors:
+
+```typescript
+// @ts-expect-error
+expect.each(actualValues)
+  .toBe(expectedValue)
+```
+
+# Error Handling
+
+When using `.each()` with multiple expected values, the array lengths must match:
+
+- If `actualValues.length > expectedValues.length`: throws `"expect.each() received lacked array"`
+- If `actualValues.length < expectedValues.length`: throws `"expect.each() received excess array"`
+
+# License
+
+This project is released under the MIT License.
+
+See [LICENSE](./LICENSE) for details.
+
+# Contributing
+
+Bug reports, feature requests, and code contributions are welcome.
+
+Feel free to contact us through [GitHub Issues](https://github.com/openreachtech/jest-expect-each/issues).
+
+```bash
+git clone https://github.com/openreachtech/jest-expect-each.git
+cd jest-expect-each
+npm install
+npm run lint
+npm test
+```
+
+# Developers
+
+[Open Reach Tech Inc.](https://openreach.tech)
+
+# Copyright
+
+© 2026 Open Reach Tech Inc.
