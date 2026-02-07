@@ -33,7 +33,6 @@ describe('expect.each()', () => {
 
       describe('matched', () => {
         test.each(lengthCases)('length: $values.length', ({ values }) => {
-          // @ts-expect-error
           expect.each(values)
             .toBe(tally)
         })
@@ -44,7 +43,6 @@ describe('expect.each()', () => {
 
         test.each(lengthCases)('length: $values.length', ({ values }) => {
           expect(() =>
-            // @ts-expect-error
             expect.each(values)
               .toBe(unmatchedValue)
           )
@@ -90,7 +88,6 @@ describe('expect.each()', () => {
         const unmatchedValue = Symbol('unmatchedValue')
 
         test.each(lengthCases)('length: $values.length', ({ values }) => {
-          // @ts-expect-error
           expect.each(values)
             .not
             .toBe(unmatchedValue)
@@ -100,7 +97,6 @@ describe('expect.each()', () => {
       describe('unmatched to throw', () => {
         test.each(lengthCases)('length: $values.length', ({ values }) => {
           expect(() =>
-            // @ts-expect-error
             expect.each(values)
               .not
               .toBe(tally)
@@ -160,7 +156,6 @@ describe('expect.each()', () => {
         ]
 
         test.each(lengthCases)('length: $values.length', async ({ values }) => {
-          // @ts-expect-error
           await expect.each(values)
             .resolves
             .toBe(tally)
@@ -193,7 +188,6 @@ describe('expect.each()', () => {
 
         test.each(lengthCases)('length: $values.length', async ({ values }) => {
           await expect(
-            // @ts-expect-error
             expect.each(values)
               .resolves
               .toBe(unmatchedValue)
@@ -256,7 +250,6 @@ describe('expect.each()', () => {
         ]
 
         test.each(lengthCases)('length: $values.length', async ({ values }) => {
-          // @ts-expect-error
           await expect.each(values)
             .resolves
             .not
@@ -288,7 +281,6 @@ describe('expect.each()', () => {
 
         test.each(lengthCases)('length: $values.length', async ({ values }) => {
           await expect(
-            // @ts-expect-error
             expect.each(values)
               .resolves
               .not
@@ -350,7 +342,6 @@ describe('expect.each()', () => {
         ]
 
         test.each(lengthCases)('length: $values().length', async ({ values }) => {
-          // @ts-expect-error
           await expect.each(values())
             .rejects
             .toBe(tally)
@@ -383,7 +374,6 @@ describe('expect.each()', () => {
 
         test.each(lengthCases)('length: $values().length', async ({ values }) => {
           await expect(
-            // @ts-expect-error
             expect.each(values())
               .rejects
               .toBe(unmatchedValue)
@@ -446,7 +436,6 @@ describe('expect.each()', () => {
         ]
 
         test.each(lengthCases)('length: $values().length', async ({ values }) => {
-          // @ts-expect-error
           await expect.each(values())
             .rejects
             .not
@@ -478,7 +467,6 @@ describe('expect.each()', () => {
 
         test.each(lengthCases)('length: $values().length', async ({ values }) => {
           await expect(
-            // @ts-expect-error
             expect.each(values())
               .rejects
               .not
@@ -528,7 +516,6 @@ describe('expect.each()', () => {
       describe.each(cases)('actual values: $actualValues', ({ actualValues, lackedCases }) => {
         test.each(lackedCases)('expected values: $expectedValues', ({ expectedValues }) => {
           expect(() =>
-            // @ts-expect-error
             expect.each(actualValues)
               .toBe.each(expectedValues)
           )
@@ -568,7 +555,6 @@ describe('expect.each()', () => {
       describe.each(cases)('actual values: $actualValues', ({ actualValues, excessCases }) => {
         test.each(excessCases)('expected values: $expectedValues', ({ expectedValues }) => {
           expect(() =>
-            // @ts-expect-error
             expect.each(actualValues)
               .toBe.each(expectedValues)
           )
@@ -596,7 +582,6 @@ describe('expect.each()', () => {
       ]
 
       test.each(cases)('actual values: $actualValues', ({ actualValues, expectedValues }) => {
-        // @ts-expect-error
         expect.each(actualValues)
           .toBe.each(expectedValues)
       })
@@ -680,7 +665,6 @@ describe('expect.each()', () => {
       describe.each(cases)('actual values: $actualValues', ({ actualValues, unmatchedCases }) => {
         test.each(unmatchedCases)('expected values: $expectedValues', ({ expectedValues }) => {
           expect(() =>
-            // @ts-expect-error
             expect.each(actualValues)
               .toBe.each(expectedValues)
           )
@@ -725,7 +709,6 @@ describe('expect.each()', () => {
       describe.each(cases)('actual values: $actualValues', ({ actualValues, lackedCases }) => {
         test.each(lackedCases)('expected values: $expectedValues', ({ expectedValues }) => {
           expect(() =>
-            // @ts-expect-error
             expect.each(actualValues)
               .not
               .toBe.each(expectedValues)
@@ -766,7 +749,6 @@ describe('expect.each()', () => {
       describe.each(cases)('actual values: $actualValues', ({ actualValues, excessCases }) => {
         test.each(excessCases)('expected values: $expectedValues', ({ expectedValues }) => {
           expect(() =>
-            // @ts-expect-error
             expect.each(actualValues)
               .not
               .toBe.each(expectedValues)
@@ -845,7 +827,6 @@ describe('expect.each()', () => {
 
       describe.each(cases)('actual values: $actualValues', ({ actualValues, unmatchedCases }) => {
         test.each(unmatchedCases)('expected values: $expectedValues', ({ expectedValues }) => {
-          // @ts-expect-error
           expect.each(actualValues)
             .not
             .toBe.each(expectedValues)
@@ -873,7 +854,6 @@ describe('expect.each()', () => {
 
       test.each(cases)('actual values: $actualValues', ({ actualValues, expectedValues }) => {
         expect(() =>
-          // @ts-expect-error
           expect.each(actualValues)
             .not
             .toBe.each(expectedValues)
@@ -918,7 +898,6 @@ describe('expect.each()', () => {
       describe.each(cases)('actual values: $actualValues', ({ actualValues, lackedCases }) => {
         test.each(lackedCases)('expected values: $expectedValues', async ({ expectedValues }) => {
           await expect(() =>
-            // @ts-expect-error
             expect.each(actualValues.map(it => Promise.resolve(it)))
               .resolves
               .toBe.each(expectedValues)
@@ -960,7 +939,6 @@ describe('expect.each()', () => {
       describe.each(cases)('actual values: $actualValues', ({ actualValues, excessCases }) => {
         test.each(excessCases)('expected values: $expectedValues', async ({ expectedValues }) => {
           await expect(() =>
-            // @ts-expect-error
             expect.each(actualValues.map(it => Promise.resolve(it)))
               .resolves
               .toBe.each(expectedValues)
@@ -990,7 +968,6 @@ describe('expect.each()', () => {
       ]
 
       test.each(cases)('actual values: $actualValues', async ({ actualValues, expectedValues }) => {
-        // @ts-expect-error
         await expect.each(actualValues.map(it => Promise.resolve(it)))
           .resolves
           .toBe.each(expectedValues)
@@ -1075,7 +1052,6 @@ describe('expect.each()', () => {
       describe.each(cases)('actual values: $actualValues', ({ actualValues, unmatchedCases }) => {
         test.each(unmatchedCases)('expected values: $expectedValues', async ({ expectedValues }) => {
           await expect(() =>
-            // @ts-expect-error
             expect.each(actualValues.map(it => Promise.resolve(it)))
               .resolves
               .toBe.each(expectedValues)
@@ -1122,7 +1098,6 @@ describe('expect.each()', () => {
       describe.each(cases)('actual values: $actualValues', ({ actualValues, lackedCases }) => {
         test.each(lackedCases)('expected values: $expectedValues', async ({ expectedValues }) => {
           await expect(() =>
-            // @ts-expect-error
             expect.each(actualValues.map(it => Promise.resolve(it)))
               .resolves
               .not
@@ -1165,7 +1140,6 @@ describe('expect.each()', () => {
       describe.each(cases)('actual values: $actualValues', ({ actualValues, excessCases }) => {
         test.each(excessCases)('expected values: $expectedValues', async ({ expectedValues }) => {
           await expect(() =>
-            // @ts-expect-error
             expect.each(actualValues.map(it => Promise.resolve(it)))
               .resolves
               .not
@@ -1246,7 +1220,6 @@ describe('expect.each()', () => {
 
       describe.each(cases)('actual values: $actualValues', ({ actualValues, matchedCases }) => {
         test.each(matchedCases)('expected values: $expectedValues', async ({ expectedValues }) => {
-          // @ts-expect-error
           await expect.each(actualValues.map(it => Promise.resolve(it)))
             .resolves
             .not
@@ -1275,7 +1248,6 @@ describe('expect.each()', () => {
 
       test.each(cases)('actual values: $actualValues', async ({ actualValues, expectedValues }) => {
         await expect(() =>
-          // @ts-expect-error
           expect.each(actualValues.map(it => Promise.resolve(it)))
             .resolves
             .not
@@ -1322,7 +1294,6 @@ describe('expect.each()', () => {
       describe.each(cases)('actual values: $actualValues', ({ actualValues, lackedCases }) => {
         test.each(lackedCases)('expected values: $expectedValues', async ({ expectedValues }) => {
           await expect(() =>
-            // @ts-expect-error
             expect.each(actualValues.map(it => () => Promise.reject(it)))
               .rejects
               .toBe.each(expectedValues)
@@ -1364,7 +1335,6 @@ describe('expect.each()', () => {
       describe.each(cases)('actual values: $actualValues', ({ actualValues, excessCases }) => {
         test.each(excessCases)('expected values: $expectedValues', async ({ expectedValues }) => {
           await expect(() =>
-            // @ts-expect-error
             expect.each(actualValues.map(it => () => Promise.reject(it)))
               .rejects
               .toBe.each(expectedValues)
@@ -1394,7 +1364,6 @@ describe('expect.each()', () => {
       ]
 
       test.each(cases)('actual values: $actualValues', async ({ actualValues, expectedValues }) => {
-        // @ts-expect-error
         await expect.each(actualValues.map(it => () => Promise.reject(it)))
           .rejects
           .toBe.each(expectedValues)
@@ -1479,7 +1448,6 @@ describe('expect.each()', () => {
       describe.each(cases)('actual values: $actualValues', ({ actualValues, unmatchedCases }) => {
         test.each(unmatchedCases)('expected values: $expectedValues', async ({ expectedValues }) => {
           await expect(() =>
-            // @ts-expect-error
             expect.each(actualValues.map(it => () => Promise.reject(it)))
               .rejects
               .toBe.each(expectedValues)
@@ -1526,7 +1494,6 @@ describe('expect.each()', () => {
       describe.each(cases)('actual values: $actualValues', ({ actualValues, lackedCases }) => {
         test.each(lackedCases)('expected values: $expectedValues', async ({ expectedValues }) => {
           await expect(() =>
-            // @ts-expect-error
             expect.each(actualValues.map(it => () => Promise.reject(it)))
               .rejects
               .not
@@ -1569,7 +1536,6 @@ describe('expect.each()', () => {
       describe.each(cases)('actual values: $actualValues', ({ actualValues, excessCases }) => {
         test.each(excessCases)('expected values: $expectedValues', async ({ expectedValues }) => {
           await expect(() =>
-            // @ts-expect-error
             expect.each(actualValues.map(it => () => Promise.reject(it)))
               .rejects
               .not
@@ -1650,7 +1616,6 @@ describe('expect.each()', () => {
 
       describe.each(cases)('actual values: $actualValues', ({ actualValues, matchedCases }) => {
         test.each(matchedCases)('expected values: $expectedValues', async ({ expectedValues }) => {
-          // @ts-expect-error
           await expect.each(actualValues.map(it => () => Promise.reject(it)))
             .rejects
             .not
@@ -1679,7 +1644,6 @@ describe('expect.each()', () => {
 
       test.each(cases)('actual values: $actualValues', async ({ actualValues, expectedValues }) => {
         await expect(() =>
-          // @ts-expect-error
           expect.each(actualValues.map(it => () => Promise.reject(it)))
             .rejects
             .not
