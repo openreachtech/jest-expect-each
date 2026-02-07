@@ -860,7 +860,7 @@ describe('expect.each()', () => {
         test.each(lackedCases)('length: $expectedValues.length', async ({ expectedValues }) => {
           await expect(() =>
             // @ts-expect-error
-            expect.each(actualValues.map(it => () => Promise.rejects(it)))
+            expect.each(actualValues.map(it => () => Promise.reject(it)))
               .rejects
               .toBeNull.each(expectedValues)
           )
@@ -892,7 +892,7 @@ describe('expect.each()', () => {
         test.each(excessCases)('length: $expectedValues.length', async ({ expectedValues }) => {
           await expect(() =>
             // @ts-expect-error
-            expect.each(actualValues.map(it => () => Promise.rejects(it)))
+            expect.each(actualValues.map(it => () => Promise.reject(it)))
               .rejects
               .toBeNull.each(expectedValues)
           )
@@ -917,7 +917,7 @@ describe('expect.each()', () => {
       test.each(cases)('actual values: $actualValues', async ({ actualValues, expectedValues }) => {
         await expect(() =>
           // @ts-expect-error
-          expect.each(actualValues.map(it => () => Promise.rejects(it)))
+          expect.each(actualValues.map(it => () => Promise.reject(it)))
             .rejects
             .toBeNull.each(expectedValues)
         )
