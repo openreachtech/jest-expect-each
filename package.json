@@ -36,9 +36,11 @@
   },
   "homepage": "https://github.com/openreachtech/jest-expect-each#readme",
   "devDependencies": {
-    "@openreachtech/eslint-config": "0.3.0",
+    "@openreachtech/eslint-config": "^3.0.2",
+    "@stylistic/eslint-plugin-js": "^4.4.1",
+    "@stylistic/eslint-plugin-plus": "^4.4.1",
     "@types/jest": "^30.0.0",
-    "eslint": "^8.14.0",
+    "eslint": "^9.39.4",
     "jest": "^30.2.0"
   }
 }
