@@ -5,9 +5,16 @@ on:
     branches:
       - '**'
 
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
 jobs:
   test:
-    runs-on: [self-hosted, light]
+    runs-on: ubuntu-latest
 
     strategy:
       matrix:
