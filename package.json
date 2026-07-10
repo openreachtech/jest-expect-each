@@ -41,6 +41,6 @@
     "@stylistic/eslint-plugin-plus": "^4.4.1",
     "@types/jest": "^30.0.0",
     "eslint": "^9.39.4",
-    "jest": "^30.2.0"
+    "jest": "^30.4.2"
   }
 }
