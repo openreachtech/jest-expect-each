@@ -13,7 +13,8 @@
       "require": "./lib/setup-expect-each.js",
       "node": "./lib/setup-expect-each.js",
       "default": "./lib/setup-expect-each.js"
-    }
+    },
+    "./types/*": "./types/*"
   },
   "type": "commonjs",
   "scripts": {
