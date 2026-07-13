@@ -1,6 +1,6 @@
 {
   "name": "@openreachtech/jest-expect-each",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "expect.each() for Jest extension.",
   "files": [
     "lib/",
