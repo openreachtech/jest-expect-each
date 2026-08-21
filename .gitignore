@@ -1,6 +1,6 @@
 #### environment
 .env
-node_modules
+node_modules/
 
 #### for Windows
 Thumbs.db
