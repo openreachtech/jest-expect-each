@@ -1,5 +1,3 @@
-'use strict'
-
 describe('expect.each()', () => {
   describe('.toBeCloseTo()', () => {
     /**
