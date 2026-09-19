@@ -12,6 +12,21 @@ A Jest extension that adds `expect.each()` for testing multiple values efficient
 npm install @openreachtech/jest-expect-each
 ```
 
+# Requirements
+
+`jest-expect-each` is published as an ES module, and offers no CommonJS entry point.
+
+- The package that consumes it declares `"type": "module"` in its `package.json`.
+- Jest runs with the `--experimental-vm-modules` flag of Node.js.
+
+```json
+{
+  "scripts": {
+    "test": "export NODE_OPTIONS=\"$NODE_OPTIONS --experimental-vm-modules\"; jest"
+  }
+}
+```
+
 # Setup
 
 Add the following lines to your Jest setup file (e.g., `jest.setup.js`), or to the top of
