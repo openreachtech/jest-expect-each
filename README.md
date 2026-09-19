@@ -14,18 +14,11 @@ npm install @openreachtech/jest-expect-each
 
 # Setup
 
-Add the following line to your Jest setup file (e.g., `jest.setup.js`):
+Add the following lines to your Jest setup file (e.g., `jest.setup.js`), or to the top of
+individual test files:
 
 ```javascript
-const setupExpectEach = require('@openreachtech/jest-expect-each')
-
-setupExpectEach()
-```
-
-Or import it at the top of individual test files:
-
-```javascript
-const setupExpectEach = require('@openreachtech/jest-expect-each')
+import { setupExpectEach } from '@openreachtech/jest-expect-each'
 
 setupExpectEach()
 ```
