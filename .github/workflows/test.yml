@@ -42,11 +42,6 @@ jobs:
           # sweep to bump a pinned major across all of them. Pin a concrete version
           # here only in a repository that genuinely needs one.
           node-version: lts/*
-          # ⚠️ Kept against the boilerplate, which assumes every dependency resolves
-          # from the public registry. @openreachtech/eslint-config ^3.0.2 is published
-          # to GitHub Packages alone, and .npmrc points the @openreachtech scope there.
-          # Drop this, and the NODE_AUTH_TOKEN below, once that dependency moves.
-          registry-url: https://npm.pkg.github.com
 
       - name: 🖨️ Print environment
         env:
@@ -73,8 +68,6 @@ jobs:
 
       - name: 📦 Install packages
         run: npm ci
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.TO_REPO_OF_ORT_PRIVATE }}
 
       - name: 🧵 ESLint
         run: npm run lint
