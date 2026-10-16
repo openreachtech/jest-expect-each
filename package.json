@@ -32,10 +32,10 @@
   "homepage": "https://github.com/openreachtech/jest-expect-each#readme",
   "devDependencies": {
     "@openreachtech/eslint-config": "^4.5.0",
-    "@types/jest": "^30.0.0",
     "eslint": "^9.39.4"
   },
   "peerDependencies": {
+    "@types/jest": "^30.0.0",
     "jest": "^30.5.2"
   }
 }
