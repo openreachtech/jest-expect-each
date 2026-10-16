@@ -33,7 +33,9 @@
   "devDependencies": {
     "@openreachtech/eslint-config": "^4.5.0",
     "@types/jest": "^30.0.0",
-    "eslint": "^9.39.4",
+    "eslint": "^9.39.4"
+  },
+  "peerDependencies": {
     "jest": "^30.5.2"
   }
 }
